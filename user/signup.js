@@ -16,7 +16,7 @@ module.exports.handler = async (event) => {
 
     const putParamsToDynamoDB = {
       TableName: TABLE_ID,
-      Item: {email, name}
+      Item: {email, name, balance: 0}
     }
     await dynamoDb.put(putParamsToDynamoDB).promise()
 

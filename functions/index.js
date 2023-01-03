@@ -13,7 +13,7 @@ const sendResponse = (statusCode, body) => {
 const validateInput = (data) => {
   const body = JSON.parse(data);
   const { email, password } = body
-  return !(!email || !password || password.length < 6);
+  return !(!email || !password || password.length < 8);
 }
 
 module.exports = {

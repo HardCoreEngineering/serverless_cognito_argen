@@ -5,11 +5,11 @@ const dynamodb = new AWS.DynamoDB.DocumentClient()
 
 module.exports.handler = async (event) => {
   try {
-    const {email, name} = event.body
+    const {email} = JSON.parse(event.body)
 
     const getItemParams = {
       TableName: process.env.TABLE_ID,
-      Key: {email, name}
+      Key: {"email": email}
     }
 
     const result = await dynamodb.get(getItemParams).promise()

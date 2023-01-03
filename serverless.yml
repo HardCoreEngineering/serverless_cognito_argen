@@ -59,15 +59,11 @@ resources:
         AttributeDefinitions:
           - AttributeName: email
             AttributeType: S
-          - AttributeName: name
-            AttributeType: S
         BillingMode: PAY_PER_REQUEST
         KeySchema:
           - AttributeName: email
             KeyType: HASH
-          - AttributeName: name
-            KeyType: RANGE
-        TableName: serverless-table-argen
+        TableName: serverless-dynamodb-argen
     UserPool:
       Type: AWS::Cognito::UserPool
       Properties:
